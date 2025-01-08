@@ -1,0 +1,681 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  padding-top: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  min-height: auto;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+
+/* Hero Section */
+.hero-section {
+  margin-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-image: url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: gradientBg 8s ease-in-out infinite;
+}
+
+/* Enhanced overlay with gradient */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+/* Content styling */
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-section .btn-explore {
+  background: linear-gradient(45deg, #007bff, #00bcd4);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: none;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-section .btn-explore:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+  background: linear-gradient(45deg, #0056b3, #008ba3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive styles */
+@media (max-width: 991.98px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section .btn-explore {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+/* Add subtle floating animation to the button arrow */
+.btn-explore .arrow {
+  animation: floatArrow 1.5s ease-in-out infinite;
+}
+
+@keyframes floatArrow {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+/* Service Cards */
+.service-card {
+  background: white;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  padding: 1rem;
+  background: rgba(0,123,255,0.1);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* WhatsApp Button */
+.whatsapp-icon {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25d366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.bg-secondary {
+    --bs-bg-opacity: 1;
+    background-color: rgb(30, 41, 51) !important;
+}
+
+.header {
+  transition: all 0.3s ease;
+  background-color: #000000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header.scrolled {
+  background-color: #000000;
+}
+
+.navbar {
+  padding: 1rem 0;
+  background-color: #000000;
+}
+
+.navbar-brand {
+  position: relative;
+  z-index: 2;
+}
+
+.navbar-brand img {
+  transition: transform 0.3s ease;
+  filter: brightness(1.2);
+}
+
+.header.scrolled .navbar-brand img {
+  filter: none;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff !important;
+}
+
+/* Underline animation for nav links */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile navigation styles */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #000000;
+    padding: 1rem;
+  }
+  
+  .navbar-toggler {
+    border-color: rgba(255,255,255,0.5);
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+
+  .nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 0;
+  }
+
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .nav-link:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+  }
+
+  /* Override scrolled state colors for mobile */
+  .header.scrolled .nav-link {
+    color: white !important;
+  }
+
+  .header.scrolled .nav-link:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+}
+
+.bg-white {
+  background-color: #000000 !important;
+}
+
+.bg-opacity-50 {
+  opacity: 1 !important;
+}
+
+.backdrop-blur {
+  backdrop-filter: none;
+}
+
+.header.scrolled,
+.header.scrolled .navbar {
+    background: linear-gradient(135deg, #1a2942 0%, #1e3c72 100%);
+}
+
+.header.scrolled .nav-link {
+  color: white !important;
+}
+
+.header.scrolled .nav-link:hover {
+  color: #007bff !important;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 991.98px) {
+  .hero-section {
+    margin-top: 70px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+}
+
+.feature-card {
+    background: white;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    padding: 1rem;
+    background: rgba(0,123,255,0.1);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* WhatsApp Chat Feature */
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-icon {
+    background: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    text-decoration: none;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+.whatsapp-icon i {
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-popup {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-container:hover .whatsapp-popup {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-header {
+    background: #075e54;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.popup-header i {
+    font-size: 20px;
+}
+
+.popup-message {
+    padding: 20px;
+    color: #333;
+    font-size: 14px;
+    border-radius: 0 0 10px 10px;
+    background: #fff;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .whatsapp-popup {
+        width: 250px;
+        right: 10px;
+    }
+    
+    .whatsapp-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+}
+
+/* Footer Styling */
+.bg-dark-blue {
+    background: linear-gradient(135deg, #1a2942 0%, #1e3c72 100%);
+    color: white;
+}
+
+footer {
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
+
+footer .social-links a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #00bcd4;
+    transform: translateY(-3px);
+    display: inline-block;
+}
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #00bcd4 !important;
+    text-decoration: none;
+}
+
+footer hr {
+    border-color: rgba(255,255,255,0.1);
+}
+
+footer .form-control {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+}
+
+footer .form-control::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+footer .btn-primary {
+    background: #00bcd4;
+    border-color: #00bcd4;
+}
+
+footer .btn-primary:hover {
+    background: #008ba3;
+    border-color: #008ba3;
+}
+
+/* Portfolio Section Styling */
+.property-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.property-image {
+    position: relative;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    overflow: hidden;
+}
+
+.property-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover .property-image img {
+    transform: scale(1.1);
+}
+
+.property-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.property-card:hover .property-overlay {
+    opacity: 1;
+}
+
+.property-content {
+    padding: 1.5rem;
+}
+
+.property-content h3 {
+    margin-bottom: 0.5rem;
+    color: #1a2942;
+}
+
+.property-content p {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .property-card {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Contact Form Styling */
+.contact-form-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.contact-form-section .card {
+    border: none;
+    border-radius: 15px;
+}
+
+.contact-form-section .form-control,
+.contact-form-section .form-select {
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.contact-form-section .form-control:focus,
+.contact-form-section .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.15);
+}
+
+.contact-form-section .btn-primary {
+    background: linear-gradient(45deg, #007bff, #00bcd4);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-form-section .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+}
+
+.form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-form-section .card-body {
+        padding: 2rem;
+    }
+    
+    .contact-form-section .btn-lg {
+        width: 100%;
+    }
+}
+
+/* Animation for form submission */
+@keyframes submitPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.contact-form-section .btn-primary:active {
+    animation: submitPulse 0.3s ease;
+}
+
+
