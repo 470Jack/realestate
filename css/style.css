@@ -278,7 +278,7 @@ body {
 /* Mobile navigation styles */
 @media (max-width: 991.98px) {
   .navbar-collapse {
-    background-color: #000000;
+    background-color: #1c2743;
     padding: 1rem;
   }
   
